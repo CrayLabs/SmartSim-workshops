@@ -277,10 +277,12 @@ def fd2d_heat_steady_test01 (nx, ny ):
   umat = fd2d_heat_steady ( nx, ny, xvec, yvec, d, f )
   xmat, ymat = np.meshgrid ( xvec, yvec )
 
-  client = Client(cluster=False)
-  client.put_tensor("steady_state_u", umat)
-  client.put_tensor("steady_state_x", xmat)
-  client.put_tensor("steady_state_y", ymat)
+#
+#  EXERCISE: add the code to:
+#  Start a SmartRedis Client
+#  Put the arrays as "tensors" on the DB, their keys should be
+#  "steady_state_u", "steady_state_x", and "steady_state_y"
+#
 
   print(f"Mean value of U is {np.mean(umat)} \n")
 
