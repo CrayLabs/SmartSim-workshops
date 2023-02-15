@@ -135,6 +135,13 @@ void test01 (int nx, int ny )
 //
   umat = fd2d_heat_steady ( nx, ny, xvec, yvec, d, f );
 
+/*
+  Start a SmartRedis Client
+  Define the dimensions of the umat, xmat, and ymat arrays
+  Put the arrays as "tensors" on the DB, their keys should be
+  "steady_state_u", "steady_state_x", and "steady_state_y"
+*/
+
   std::vector<size_t> dims = {(size_t)ny, (size_t)nx};
   bool cluster_mode = false; // Set to false if not using a clustered database
   SmartRedis::Client client(cluster_mode);
@@ -145,6 +152,7 @@ void test01 (int nx, int ny )
   client.put_tensor(key_u, umat, dims, SRTensorTypeDouble, SRMemLayoutContiguous);
   client.put_tensor(key_x, xmat, dims, SRTensorTypeDouble, SRMemLayoutContiguous);
   client.put_tensor(key_y, ymat, dims, SRTensorTypeDouble, SRMemLayoutContiguous);
+
 //
 //  Report the average value of U.
 //

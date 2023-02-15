@@ -154,20 +154,14 @@ subroutine test01 (nx, ny )
   allocate ( umat(1:nx,1:ny) )
   call fd2d_heat_steady ( nx, ny, xvec, yvec, d, f, umat )
 
-!
-!  EXERCISE Set up NON-CLUSTERED SmartRedis client 
+
+! 
+!   EXERCISE: add the code to:
+!   Start a SmartRedis Client
+!   Put the arrays umat, xmat, and ymat as "tensors" on the DB, their keys should be
+!   "steady_state_u", "steady_state_x", and "steady_state_y"
 !
 
-  result = client%initialize(.false., "smartredis_put_get_3D") ! Change .false. to .true. if not using a clustered database
-  if (result .ne. SRNoError) error stop 'client%initialize failed'
-
-  ! Send a tensor to the database via the client and verify that we can retrieve it
-  result = client%put_tensor("steady_state_u", umat, shape(umat))
-  if (result .ne. SRNoError) error stop 'client%put_tensor failed'
-  result = client%put_tensor("steady_state_x", xmat, shape(xmat))
-  if (result .ne. SRNoError) error stop 'client%put_tensor failed'
-  result = client%put_tensor("steady_state_y", ymat, shape(ymat))
-  if (result .ne. SRNoError) error stop 'client%put_tensor failed'
 !
 !  Report the average value of U.
 !

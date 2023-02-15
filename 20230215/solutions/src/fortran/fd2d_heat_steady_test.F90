@@ -155,10 +155,12 @@ subroutine test01 (nx, ny )
   call fd2d_heat_steady ( nx, ny, xvec, yvec, d, f, umat )
 
 !
-!  EXERCISE Set up NON-CLUSTERED SmartRedis client 
+!   Start a SmartRedis Client
+!   Put the umat, xmat, and ymat arrays as "tensors" on the DB, their keys should be
+!   "steady_state_u", "steady_state_x", and "steady_state_y"
 !
 
-  result = client%initialize(.false., "smartredis_put_get_3D") ! Change .false. to .true. if not using a clustered database
+  result = client%initialize(.false., "heated_plate") ! Change .false. to .true. if not using a clustered database
   if (result .ne. SRNoError) error stop 'client%initialize failed'
 
   ! Send a tensor to the database via the client and verify that we can retrieve it

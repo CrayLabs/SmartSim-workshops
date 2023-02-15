@@ -127,49 +127,14 @@ void test01 ( int nx, int ny)
 */
   umat = fd2d_heat_steady ( nx, ny, xvec, yvec, d, f );
 
-  bool cluster_mode = false; // Set to false if not using a clustered database
-
-  printf("HERE 1\n");
-  const char* logger_name = "heat_steady";
-  size_t cid_len = strlen(logger_name);
-  size_t n_dims = 2;
-  size_t* dims = malloc(n_dims*sizeof(size_t));
-  dims[0] = ny;
-  dims[1] = nx;
-
-  printf("HERE 2\n");
-  void* client = NULL;
-  if (SRNoError != SmartRedisCClient(cluster_mode, logger_name, cid_len, &client)) {
-    printf("Client initialization failed!\n");
-    exit(-1);
-  }
-  printf("HERE\n");
-  char key_u[] = "steady_state_u";
-  size_t key_u_len = strlen(key_u);
-  char key_x[] = "steady_state_x";
-  size_t key_x_len = strlen(key_x);
-  char key_y[] = "steady_state_y";
-  size_t key_y_len = strlen(key_y);
-
-  printf("HERE\n");
-  if (SRNoError != put_tensor(client, key_u, key_u_len,
-                              (void*)umat, dims, n_dims,
-                              SRTensorTypeDouble, SRMemLayoutContiguous)) {
-    printf("Call to put_tensor failed!\n");
-    exit(-1);
-  }
-  if (SRNoError != put_tensor(client, key_x, key_x_len,
-                              (void*)xmat, dims, n_dims,
-                              SRTensorTypeDouble, SRMemLayoutContiguous)) {
-    printf("Call to put_tensor failed!\n");
-    exit(-1);
-  }
-  if (SRNoError != put_tensor(client, key_y, key_y_len,
-                              (void*)ymat, dims, n_dims,
-                              SRTensorTypeDouble, SRMemLayoutContiguous)) {
-    printf("Call to put_tensor failed!\n");
-    exit(-1);
-  }
+/*
+  EXERCISE: add the code to:
+  Start a SmartRedis Client
+  Define the dimensions of the umat, xmat, and ymat arrays
+  Put the arrays as "tensors" on the DB, their keys should be
+  "steady_state_u", "steady_state_x", and "steady_state_y"
+  Hint: SRTensorTypeDouble, SRMemLayoutContiguous...
+*/
 
 /*
   Report the average value of U.
@@ -194,9 +159,10 @@ void test01 ( int nx, int ny)
   free ( xvec );
   free ( ymat );
   free ( yvec );
-  free ( dims );
-  printf("HERE\n");
-  DeleteCClient(&client);
+  
+/*
+  EXERCISE free whatever you allocated!
+*/
 
   return;
 }
