@@ -16,6 +16,7 @@ If you are working on `swan`, you will be able to use a python environment which
 ```bash
 source /home/users/arigazzi/smartsim/bin/activate
 export SMARTREDIS_LIBRARY=/lus/scratch/arigazzi/smartsim-dev/SmartRedis/install
+export SMARTREDIS_INSTALL_PATH=/lus/scratch/arigazzi/smartsim-dev/SmartRedis/install
 ```
 and you are ready to go!
 
@@ -46,6 +47,7 @@ If you decide to work with one of the compiled languages, you should navigate to
 
 ```bash
 export SMARTREDIS_LIBRARY=/lus/scratch/arigazzi/smartsim-dev/SmartRedis/install
+export SMARTREDIS_INSTALL_PATH=/lus/scratch/arigazzi/smartsim-dev/SmartRedis/install
 ```
 
 then, if you are working on `swan`, you can simply run
