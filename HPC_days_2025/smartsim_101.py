@@ -130,6 +130,9 @@ exe_args.extend(["--nx=41", "--ny=21"])
 # create "run settings" for the simulation which define how
 # the simulation will be executed when passed to Experiment.start()
 settings = exp.create_run_settings(exe, exe_args=exe_args)
+settings.set_nodes(1)
+settings.set_tasks(1)
+
 model = exp. #EXERCISE
 
 if language == "python":

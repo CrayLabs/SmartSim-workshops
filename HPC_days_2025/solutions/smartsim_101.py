@@ -41,7 +41,7 @@ import numpy as np
 
 # %%
 # Language options: c, cpp, fortran, python
-language = "cpp"
+language = "c"
 
 assert language in ["cpp", "python", "c", "fortran"]
 lang_to_exe = {
@@ -130,6 +130,9 @@ exe_args.extend(["--nx=41", "--ny=21"])
 # create "run settings" for the simulation which define how
 # the simulation will be executed when passed to Experiment.start()
 settings = exp.create_run_settings(exe, exe_args=exe_args)
+settings.set_nodes(1)
+settings.set_tasks(1)
+
 model = exp.create_model("fd_simulation", run_settings=settings)
 
 if language == "python":
@@ -239,4 +242,4 @@ exp.get_status(model)
 # We can also look at a summary of the executed entities.
 
 # %%
-exp.summary(format="html")
+print(exp.summary(style="simple"))
