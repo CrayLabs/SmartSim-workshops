@@ -1,0 +1,3 @@
+# Ignore all directories named 'build' anywhere in the project
+build/
+**/build/
