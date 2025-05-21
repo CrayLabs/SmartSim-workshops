@@ -37,8 +37,8 @@ os.environ["SMARTSIM_DB_FILE_PARSE_INTERVAL"] = "5"
 # Now you can decide what implementation of the simulation you want to instrument. Just
 # set `language` to one out of `cpp` (for C++), `c` (for C), `python`, and `fortran`.
 # Then, depending the system you are running on, you will need to pick a launcher. If
-# you are on `swan`, then pick `pbs`. On other clusters or supercomputers, you might
-# want to pick `slurm`. Finally, if you are running this on your own machine (laptop or
+# you are on `hamilton`, then pick `slurm`. On other clusters or supercomputers, you might
+# want to pick `pbs`. Finally, if you are running this on your own machine (laptop or
 # desktop), just select `local`. A couple other parameters will be set for you based on
 # these choices.
 
@@ -167,8 +167,8 @@ exp.start(model, block=True, summary=False)
 # - Fortran: `src/fortran/fd2d_heat_steadt_test.F90`
 # - Python: `src/python/fd2d_heat_steady.py`
 #
-# If you are on `swan` need some time to work on the code, remember to exit the
-# allocation (CTRL+D)... you will get one later!
+# If you are on `hamilton` need some time to work on the code, remember to exit the
+# allocation (CTRL+D) if you have one active... you will get one later!
 #
 # Once you get everything into place (and you build the code, if you are using a
 # compiled language!), re-execute the two cells above. If the simulation completes,

@@ -53,7 +53,8 @@ If you decide to work with one of the compiled languages, you should navigate to
 then, if you are working on `hamilton`, you can simply run
 
 ```bash
-    source make_app.sh
+    chmod +x make_app.sh
+    ./make_app.sh
 ```
 
 and the app will be built.
@@ -77,18 +78,19 @@ If you are on `hamilton`, please follow the next step, if you are on your laptop
 
 ### Getting the allocation on Slurm
 To launch jobs on `hamilton`, you will need to work within an interactive *allocation* given by the workload manager, Slurm. For this tutorial, you will only need two nodes.
+SmartSim's native language is Python. We will use the driver script `smartsim_101.py` to launch the app and retrieve its results.
 
-The command to get the interactive allocation we need is
+Make sure you have activated the right virtual environment (you will see its name at the beginning of the terminal line, e.g. `(smartsim) [username@node]$`.
+The command to run the driver script in an interactive allocation we need is
 
 ```bash
-    salloc -N 2
+    salloc -N 2 --time=00:05:00 python smartsim_101.py
 ```
 
-Once that command goes through, you are all set, just re-activate the virtual environment and go to the repo directory.
+### Jupyter notebook
+If you are on your laptop, you can also use the Jupyter notebook `smartsim_101.ipynb`, which contains the same code, just install `jupyterlab` in your virtual environment, and run `jupyter lab` from the directory containing the `README.md` file.
 
-### Driver script (or Jupyter notebook)
-
-SmartSim's native language is Python. We will use the driver script `smartsim_101.py` to launch the app and retrieve its results. If you are on your laptop, you can also use the Jupyter notebook `smartsim_101.ipynb`, which contains the same code, just install `jupyterlab` in your virtual environment, and run `jupyter lab` from the directory containing the `README.md` file. That's it, the rest of the instructions are available in the script or in the notebook. Have fun!
+That's it, the rest of the instructions are available in the script or in the notebook. Have fun!
 
 If you have questions, you can either ping the instructor directly, or [join our Slack Workspace](https://join.slack.com/t/craylabs/shared_invite/zt-nw3ag5z5-5PS4tIXBfufu1bIvvr71UA) and enter the `#workshops` channel.
 
