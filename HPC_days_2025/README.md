@@ -14,13 +14,17 @@ As a first step, you will need to `git clone` this repo. Given it is a small rep
 If you are working on `hamilton`, you will be able to use a python environment which has `SmartSim` and `SmartRedis` installed. Moreover, the SmartRedis C, C++, and Fortran clients have been compiled and can be used in the simulation. All you will need to do when you log on to `hamilton` is to run:
 
 ```bash
-    source /nobackup/hpcday2/venvs/tutorial/bin/activate
-    export SMARTREDIS_LIBRARY=/nobackup/hpcday2/SmartRedis/install
-    export SMARTREDIS_INSTALL_PATH=/nobackup/hpcday2/SmartRedis/install
+    module load python/3.10.8
+    source /projects/hpcday/smartsim_tutorial/venv/smartsim/bin/activate
+    export SMARTREDIS_LIBRARY=/projects/hpcday/smartsim_tutorial/SmartRedis/install
+    export SMARTREDIS_INSTALL_PATH=/projects/hpcday/smartsim_tutorial/SmartRedis/install
 ```
 and you are ready to go!
 
 ### Building SmartSim and SmartRedis (optional)
+
+> **NOTE** This paragraph can be skipped if you are on Hamilton and use the provided virtual environment and SmartRedis installation.
+
 
 If you are working on your laptop, you will have to:
 - follow the instructions available in [the SmartSim official documentation](https://craylabs.org)
@@ -31,7 +35,11 @@ If you are working on your laptop, you will have to:
 The simulation you will instrument with SmartSim is available in four languages: Python, C, C++, and Fortran. If you are planning to work on the Python version, you are all set!
 
 If you want to work on the C, C++, or Fortran version of the simulation, you will need to build the SmartRedis clients, following [these instructions](https://www.craylabs.org/docs/installation.html#build-smartredis-library-c-c-fortran) (you can also clone the current `develop` branch instead of the stable release).
-Notice you will need to use the path to the SmartRedis install directory later.
+Notice you will need to use the path to the SmartRedis install directory later. Depending on the CMake version you have, you may need to also set the environment variable `CMAKE_POLICY_VERSION_MINIMUM` to `3.5`. For example, on a bash shell, you will need to run
+
+```bash
+    export CMAKE_POLICY_VERSION_MINIMUM=3.5
+```
 
 ## The simulation
 
@@ -46,8 +54,8 @@ We will work with the code developed by [John Burkardt](https://people.sc.fsu.ed
 If you decide to work with one of the compiled languages, you should navigate to `/src/<language>`, then, if you haven't set the environment variable `SMARTREDIS_LIBRARY`, it is a good moment to do so. Again, on `hamilton`, it will be
 
 ```bash
-    export SMARTREDIS_LIBRARY=/nobackup/hpcday2/SmartRedis/install
-    export SMARTREDIS_INSTALL_PATH=/nobackup/hpcday2/SmartRedis/install
+    export SMARTREDIS_LIBRARY=/projects/hpcday/smartsim_tutorial/SmartRedis/install
+    export SMARTREDIS_INSTALL_PATH=/projects/hpcday/smartsim_tutorial/SmartRedis/install
 ```
 
 then, if you are working on `hamilton`, you can simply run
