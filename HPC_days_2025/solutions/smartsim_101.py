@@ -29,6 +29,9 @@
 import matplotlib.pyplot as plt
 from matplotlib import cm
 import numpy as np
+import os
+
+os.environ["SMARTSIM_DB_FILE_PARSE_INTERVAL"] = 5
 
 # %% [markdown]
 # Now you can decide what implementation of the simulation you want to instrument. Just
