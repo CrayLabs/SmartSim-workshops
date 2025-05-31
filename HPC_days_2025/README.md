@@ -9,7 +9,7 @@ By the end of this tutorial you will be able to:
 - download the results of the simulation from a Python script or a Jupyter notebook and visualize them
 
 ## Setup
-As a first step, you will need to `git clone` this repo. Given it is a small repo, you can do it on your home directory.
+As a first step, you will need to `git clone` this repo. Given it is a small repo, you can do it on your home directory. Then you will need to navigate to the directory named `HPC_days_2025` (the one containing this `README.md` file).
 
 If you are working on `hamilton`, you will be able to use a python environment which has `SmartSim` and `SmartRedis` installed. Moreover, the SmartRedis C, C++, and Fortran clients have been compiled and can be used in the simulation. All you will need to do when you log on to `hamilton` is to run:
 
@@ -91,6 +91,8 @@ SmartSim's native language is Python. We will use the driver script `smartsim_10
 Make sure you have activated the right virtual environment (you will see its name at the beginning of the terminal line, e.g. `(smartsim) [username@node]$`.
 The command to run the driver script in an interactive allocation is
 
+The command to run the driver script in an interactive allocation is
+
 
 ```bash
     salloc -N 2 --time=00:05:00 python smartsim_101.py
@@ -102,7 +104,12 @@ If you are on your laptop, you can also use the Jupyter notebook `smartsim_101.i
 ### Your exercise starts here!
 That's it, the rest of the instructions are available in the script or in the notebook, you will just have to replace a bunch of `EXERCISE` lines to get this workflow up and running. Have fun!
 
+If you want to see more output from SmartSim, you can set the environment variable `SMARTSIM_LOG_LEVEL` to `debug` or `developer`: this will reveal a bit of the internal mechanisms of SmartSim - it should not be necessary for this very simple exercise, anyhow.
+
 If you have questions, you can either ping the instructor directly, or [join our Slack Workspace](https://join.slack.com/t/craylabs/shared_invite/zt-nw3ag5z5-5PS4tIXBfufu1bIvvr71UA) and enter the `#workshops` channel.
+
+### Solutions
+If you get stuck and do not want to ask an instructor (or you're not at the event), the solutions are available (not really hidden) in the workshop directory. If you want to _run_ the solution driver, don't forget to build the corresponding SmartRedis-instrumented simulation code which is available in `solutions/src/<your language>` (unless you're using the Python simulation, which does not have to be compiled).
 
 ## Notes
 This repository contains a modified version of code taken from [John Burkardt's webpage](https://people.sc.fsu.edu/~jburkardt/). This repository also contains a file taken from [this repo](https://github.com/haniibrahim/f90getopt). Licenses are inherited.
