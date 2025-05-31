@@ -89,7 +89,7 @@ To launch jobs on `hamilton`, you will need to work within an interactive *alloc
 SmartSim's native language is Python. We will use the driver script `smartsim_101.py` to launch the app and retrieve its results.
 
 Make sure you have activated the right virtual environment (you will see its name at the beginning of the terminal line, e.g. `(smartsim) [username@node]$`.
-The command to run the driver script in an interactive allocation we need is
+The command to run the driver script in an interactive allocation is
 
 ```bash
     salloc -N 2 --time=00:05:00 python smartsim_101.py
@@ -98,7 +98,9 @@ The command to run the driver script in an interactive allocation we need is
 ### Jupyter notebook
 If you are on your laptop, you can also use the Jupyter notebook `smartsim_101.ipynb`, which contains the same code, just install `jupyterlab` in your virtual environment, and run `jupyter lab` from the directory containing the `README.md` file.
 
-That's it, the rest of the instructions are available in the script or in the notebook. Have fun!
+
+### Your exercise starts here!
+That's it, the rest of the instructions are available in the script or in the notebook, you will just have to replace a bunch of `EXERCISE` lines to get this workflow up and running. Have fun!
 
 If you have questions, you can either ping the instructor directly, or [join our Slack Workspace](https://join.slack.com/t/craylabs/shared_invite/zt-nw3ag5z5-5PS4tIXBfufu1bIvvr71UA) and enter the `#workshops` channel.
 
