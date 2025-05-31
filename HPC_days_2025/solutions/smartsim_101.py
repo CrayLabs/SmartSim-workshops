@@ -30,8 +30,10 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 import numpy as np
 import os
+import pathlib
 
 os.environ["SMARTSIM_DB_FILE_PARSE_INTERVAL"] = "5"
+curpath = pathlib.Path(__file__).parent.resolve()
 
 # %% [markdown]
 # Now you can decide what implementation of the simulation you want to instrument. Just
@@ -48,9 +50,9 @@ language = "c"
 
 assert language in ["cpp", "python", "c", "fortran"]
 lang_to_exe = {
-    "cpp": "src/cpp/build/heat_steady",
-    "c": "src/c/build/heat_steady",
-    "fortran": "src/fortran/build/heat_steady",
+    "cpp": f"{curpath}/src/cpp/build/heat_steady",
+    "c": f"{curpath}/src/c/build/heat_steady",
+    "fortran": f"{curpath}/src/fortran/build/heat_steady",
     "python": "python",
 }
 exe = lang_to_exe[language]
@@ -139,7 +141,7 @@ settings.set_tasks(1)
 model = exp.create_model("fd_simulation", run_settings=settings)
 
 if language == "python":
-    model.attach_generator_files(to_copy="src/python/fd2d_heat_steady.py")
+    model.attach_generator_files(to_copy=f"{curpath}/src/python/fd2d_heat_steady.py")
 exp.generate(model, overwrite=True)
 
 # %% [markdown]
