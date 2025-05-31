@@ -106,5 +106,8 @@ If you want to see more output from SmartSim, you can set the environment variab
 
 If you have questions, you can either ping the instructor directly, or [join our Slack Workspace](https://join.slack.com/t/craylabs/shared_invite/zt-nw3ag5z5-5PS4tIXBfufu1bIvvr71UA) and enter the `#workshops` channel.
 
+### Solutions
+If you get stuck and do not want to ask an instructor (or you're not at the event), the solutions are available (not really hidden) in the workshop directory. If you want to _run_ the solution driver, don't forget to build the corresponding SmartRedis-instrumented simulation code which is available in `solutions/src/<your language>` (unless you're using the Python simulation, which does not have to be compiled).
+
 ## Notes
 This repository contains a modified version of code taken from [John Burkardt's webpage](https://people.sc.fsu.edu/~jburkardt/). This repository also contains a file taken from [this repo](https://github.com/haniibrahim/f90getopt). Licenses are inherited.
