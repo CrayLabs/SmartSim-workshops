@@ -209,7 +209,7 @@ with plt.ion():
     ax.set_xlabel("<--- Y --->")
     ax.set_ylabel("<--- X --->")
     ax.set_zlabel("<---U(X,Y)--->")
-    ax.set_title("Solution of steady heat equation")
+    ax.set_title("Steady-state solution of heat equation")
     plt.draw()
     filename = "fd2d_heat_steady_test01.png"
     fig.savefig(filename)
