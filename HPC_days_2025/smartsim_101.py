@@ -99,8 +99,9 @@ exp = #EXERCISE
 # the DB was started!
 
 # %%
-# create an Orchestrator database reference,
+# create an Orchestrator database reference on port 6780,
 # generate its output directory, and launch it locally
+# Note that the `interface` has been defined above!
 db = exp. #EXERCISE
 
 exp.generate(db, overwrite=True)
@@ -167,8 +168,6 @@ exp. #EXERCISE
 # - Fortran: `src/fortran/fd2d_heat_steadt_test.F90`
 # - Python: `src/python/fd2d_heat_steady.py`
 #
-# If you are on `hamilton` and need some time to work on the code, remember to exit the
-# allocation (CTRL+D)... you will get one later!
 #
 # Once you get everything into place (and you build the code, if you are using a
 # compiled language!), re-execute the two cells above. If the simulation completes,
@@ -245,4 +244,4 @@ exp.get_status(model)
 # We can also look at a summary of the executed entities.
 
 # %%
-exp.summary(format="html")
+print(exp.summary(style="simple"))
