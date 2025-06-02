@@ -169,8 +169,6 @@ exp.start(model, block=True, summary=False)
 # - Fortran: `src/fortran/fd2d_heat_steadt_test.F90`
 # - Python: `src/python/fd2d_heat_steady.py`
 #
-# If you are on `hamilton` need some time to work on the code, remember to exit the
-# allocation (CTRL+D) if you have one active... you will get one later!
 #
 # Once you get everything into place (and you build the code, if you are using a
 # compiled language!), re-execute the two cells above. If the simulation completes,
