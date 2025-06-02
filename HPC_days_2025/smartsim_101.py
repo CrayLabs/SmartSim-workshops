@@ -165,7 +165,7 @@ exp. #EXERCISE
 # Hint: here is which file you should modify for each language:
 # - C: `src/c/fd2d_heat_steady_test.c`
 # - C++: `src/cpp/fd2d_heat_steady_test.cpp`
-# - Fortran: `src/fortran/fd2d_heat_steadt_test.F90`
+# - Fortran: `src/fortran/fd2d_heat_steady_test.F90`
 # - Python: `src/python/fd2d_heat_steady.py`
 #
 #
