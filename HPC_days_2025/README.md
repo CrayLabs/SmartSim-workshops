@@ -95,7 +95,7 @@ The command to run the driver script in an interactive allocation is
 
 
 ```bash
-    salloc -N 2 --time=00:05:00 python smartsim_101.py
+    salloc -N 2 -p multi --time=00:05:00 python smartsim_101.py
 ```
 
 ### Jupyter notebook
