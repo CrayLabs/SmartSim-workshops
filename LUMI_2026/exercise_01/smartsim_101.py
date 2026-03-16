@@ -55,12 +55,12 @@ lang_to_exe = {
 }
 exe = lang_to_exe[language]
 
-# Deployment options: local (laptop), pbs, slurm.
+# Deployment options: local (laptop), slurm.
 launcher = "slurm"
 
-assert launcher in ["pbs", "slurm", "local"]
+assert launcher in ["slurm", "local"]
 
-launcher_to_if = {"pbs": "ib0", "slurm": "ib0", "local": "lo"}
+launcher_to_if = {"slurm": "hsn0", "local": "lo"}
 
 interface = launcher_to_if[launcher]
 

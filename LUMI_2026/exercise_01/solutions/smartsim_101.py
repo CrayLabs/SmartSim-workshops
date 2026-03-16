@@ -39,7 +39,7 @@ curpath = pathlib.Path(__file__).parent.resolve()
 # Now you can decide what implementation of the simulation you want to instrument. Just
 # set `language` to one out of `cpp` (for C++), `c` (for C), `python`, and `fortran`.
 # Then, depending the system you are running on, you will need to pick a launcher. If
-# you are on `hamilton`, then pick `slurm`. On other clusters or supercomputers, you might
+# you are on `LUMI`, then pick `slurm`. On other clusters or supercomputers, you might
 # want to pick `pbs`. Finally, if you are running this on your own machine (laptop or
 # desktop), just select `local`. A couple other parameters will be set for you based on
 # these choices.
@@ -60,9 +60,9 @@ exe = lang_to_exe[language]
 # Deployment options: local (laptop), pbs, slurm.
 launcher = "slurm"
 
-assert launcher in ["pbs", "slurm", "local"]
+assert launcher in ["slurm", "local"]
 
-launcher_to_if = {"pbs": "ib0", "slurm": "ib0", "local": "lo"}
+launcher_to_if = {"slurm": "hsn0", "local": "lo"}
 
 interface = launcher_to_if[launcher]
 

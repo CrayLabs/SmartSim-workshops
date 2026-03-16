@@ -14,7 +14,7 @@ As a first step, you will need to `git clone` this repo. Given it is a small rep
 If you are working on `LUMI`, you will be able to use a python environment which has `SmartSim` and `SmartRedis` installed. Moreover, the SmartRedis C, C++, and Fortran clients have been compiled and can be used in the simulation. All you will need to do when you log on to `LUMI` is to run:
 
 ```bash
-    module use ....
+    module use /pfs/lustref1/flash/project_465002763/shared/modulefiles
     module load smartsim
 ```
 and you are ready to go!
