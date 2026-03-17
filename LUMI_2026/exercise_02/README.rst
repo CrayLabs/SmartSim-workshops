@@ -24,7 +24,7 @@ Installation (LUMI)
 
 .. code:: bash
 
-    module use ...
+    module use /pfs/lustref1/flash/project_465002763/shared/modulefiles
     module load smartsim
 
 
@@ -45,8 +45,6 @@ Running Examples (LUMI)
 
 .. code:: bash
 
-    module use ...
-    module load smartsim
     salloc -N 4 -p small-g --reservation=smartsim --account=project_465002763 --time=00:10:00
     python driver.py
 
