@@ -19,9 +19,10 @@ When you log on to `Simba` you need to run:
     srun -N 1  -p test -A [your account]  --pty bash -i 
     module use /dss/dsshome1/02/di54cil/tutorial/modulefiles
     module load smartsim
+    $CONV_IMG
 ```
 
-and you are ready to go!
+in order to set up the SmartSim container.
 
 ### Building SmartSim and SmartRedis (optional)
 
