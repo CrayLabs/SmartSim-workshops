@@ -1,8 +1,5 @@
-SmartSim OLCF/NERSC Workshop 2024
-=================================
 
-This repository contains materials to run a hybrid scientific simulation/AI
-workflow prepared for a joint workshop between NERSC and OLCF. This workflow has
+This workflow has
 four components: a mock simulation, a sampling service that reduces the amount
 of data from the simulation, a training service that consumes the data to train
 a simple neural network, and an in-memory datastore used to transfer data
