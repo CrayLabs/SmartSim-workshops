@@ -20,7 +20,6 @@ Installation (Simba)
     srun -n 1 -p test -A pn76qi --pty /bin/bash -i
     module use /dss/dsshome1/02/di54cil/tutorial/modulefiles
     module load smartsim
-    cd smartsim_workshops
     mkdir -p build
     cd build
     cmake -Dsmartredis_DIR=$SMARTREDIS_HOME/install/share/cmake/smartredis \

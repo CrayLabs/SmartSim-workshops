@@ -12,7 +12,7 @@ def get_db_settings(system_name):
     db_settings["frontier"] = {"interface": ["hsn0","hsn1","hsn2","hsn3"]}
     db_settings["perlmutter"] = {"interface": ["hsn0","hsn1","hsn2","hsn3"]}
     db_settings["LUMI"] = {"interface": ["hsn0","hsn1"]}
-    db_settings["Simba"] = {"interface": "lo"}
+    db_settings["Simba"] = {"interface": "lo", "port": 6379}
     return db_settings[system_name]
 
 def get_launcher(system_name):
@@ -43,7 +43,7 @@ def main(args):
     model.attach_generator_files(to_symlink=["data"])
 
     # Create the objects for the sampler
-    rs_sampler = exp.create_run_settings("python", exe_args="sampler.py")
+    rs_sampler = exp.create_run_settings("python3", exe_args="sampler.py")
     if launcher == "slurm":
         rs_sampler.set_tasks(1)
         rs_sampler.set_nodes(1)
@@ -51,7 +51,7 @@ def main(args):
     sampler.attach_generator_files(to_symlink=["sampler.py"])
 
     # Create the objects for the trainer
-    rs_trainer = exp.create_run_settings("python", exe_args="trainer.py")
+    rs_trainer = exp.create_run_settings("python3", exe_args="trainer.py")
     if launcher == "slurm":
         rs_trainer.set_tasks(1)
         rs_trainer.set_nodes(1)
