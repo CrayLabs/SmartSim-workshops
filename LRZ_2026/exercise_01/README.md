@@ -22,7 +22,7 @@ When you log on to `Simba` you need to run:
     $CONV_IMG
 ```
 
-in order to set up the SmartSim container.
+in order to set up the SmartSim container. Note that the last step extracts the Smartsim container image into your local user space. This step will take a couple of minutes.
 
 ### Building SmartSim and SmartRedis (optional)
 

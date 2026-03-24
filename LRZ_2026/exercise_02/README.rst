@@ -17,7 +17,7 @@ Installation (Simba)
 
 .. code:: bash
 
-    srun -n 1 -p test -A pn76qi --pty /bin/bash -i
+    srun -n 1 -p test -A [your account] --pty /bin/bash -i
     module use /dss/dsshome1/02/di54cil/tutorial/modulefiles
     module load smartsim
     mkdir -p build
@@ -34,7 +34,7 @@ Running Examples (Simba)
 
 .. code:: bash
 
-    srun -n 1 -p test -A pn76qi --pty /bin/bash -i
+    srun -n 1 -p test -A [your account] --pty /bin/bash -i
     module use /dss/dsshome1/02/di54cil/tutorial/modulefiles
     module load smartsim
     $SSIM_SH
