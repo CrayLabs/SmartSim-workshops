@@ -32,7 +32,7 @@ If you are working on your laptop, you will have to:
 
 The simulation you will instrument with SmartSim is available in four languages: Python, C, C++, and Fortran. If you are planning to work on the Python version, you are all set!
 
-If you want to work on the C, C++, or Fortran version of the simulation, you will need to build the SmartRedis clients, following [these instructions](https://www.craylabs.org/docs/installation_instructions/basic.html#build-smartredis-library-c-c-fortran) (you can also clone the current `develop` branch instead of the stable release).
+If you want to work on the C, C++, or Fortran version of the simulation, and if you are not working on LUMI, you will need to build the SmartRedis clients, following [these instructions](https://www.craylabs.org/docs/installation_instructions/basic.html#build-smartredis-library-c-c-fortran) (you can also clone the current `develop` branch instead of the stable release).
 Notice you will need to use the path to the SmartRedis install directory later. Depending on the CMake version you have, you may need to also set the environment variable `CMAKE_POLICY_VERSION_MINIMUM` to `3.5`. For example, on a bash shell, you will need to run
 
 ```bash

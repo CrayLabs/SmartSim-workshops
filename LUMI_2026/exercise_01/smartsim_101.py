@@ -91,15 +91,15 @@ exp = #EXERCISE
 
 # %% [markdown]
 # OK, that was easy. Now something slightly more complex: you need to create the
-# in-memory database on port `6780`, setting `interface=interface` (we defined this
-# above too).
+# in-memory database on a port between `6000` and `8000`, setting `interface=interface`
+# (we defined this above too).
 # Hint: the `Experiment` class has functions for creating the most used entities.
 # After that, as you can see, the experiment will start the database. Wait for the cell
 #  to be executed and, if all went according to plan, you will see the address where
 # the DB was started!
 
 # %%
-# create an Orchestrator database reference on port 6780,
+# create an Orchestrator database reference on a port between 6000 and 8000,
 # generate its output directory, and launch it locally
 # Note that the `interface` has been defined above!
 db = exp. #EXERCISE
