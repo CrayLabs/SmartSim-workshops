@@ -4,14 +4,17 @@ from collections import defaultdict
 import argparse
 import os
 import time
+from random import *
 
 from smartsim import Experiment
 
 def get_db_settings(system_name):
+
+    port = randint(6000,8000)
     db_settings = defaultdict(lambda: {"interface":"lo0"}) # Note: try "lo" if this does not work
     db_settings["frontier"] = {"interface": ["hsn0","hsn1","hsn2","hsn3"]}
     db_settings["perlmutter"] = {"interface": ["hsn0","hsn1","hsn2","hsn3"]}
-    db_settings["LUMI"] = {"interface": ["hsn0","hsn1"]}
+    db_settings["LUMI"] = {"interface": ["hsn0","hsn1"], "port": port}
     return db_settings[system_name]
 
 def get_launcher(system_name):
@@ -25,8 +28,6 @@ def main(args):
 
     # Get system-specific settings
     system_name = "LUMI"
-    #db_settings = {"interface" : "lo"}
-    #launcher = "local"
     launcher = get_launcher(system_name)
     db_settings = get_db_settings(system_name)
 
