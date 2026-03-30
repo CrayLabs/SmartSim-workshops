@@ -42,6 +42,6 @@ Running Examples (LUMI)
 
 .. code:: bash
 
-    salloc -N 4 -p small-g --reservation=smartsim --account=project_465002763 --time=00:10:00
+    salloc -N 4 --ntasks-per-node=4 -p small-g --reservation=smartsim --account=project_465002763 --time=00:10:00
     python driver.py
 
