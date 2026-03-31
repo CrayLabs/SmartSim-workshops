@@ -60,7 +60,7 @@ def main(args):
     trainer = exp.create_model("trainer", rs_trainer)
     trainer.attach_generator_files(to_symlink=["trainer.py"])
 
-    time.sleep(30)
+    time.sleep(10)
     # Create and configure the database
     db = exp.create_database(**db_settings)
 
